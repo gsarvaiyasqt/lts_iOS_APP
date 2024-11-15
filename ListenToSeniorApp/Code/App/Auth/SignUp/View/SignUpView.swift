@@ -16,6 +16,8 @@ struct SignUpPage: View {
     @State private var Password : String = ""
     @State private var isCheck : Bool = false
     
+    @EnvironmentObject var route : Route
+    
     var body: some View {
             ZStack {
                 
@@ -110,7 +112,7 @@ struct SignUpPage: View {
                             Text("Sign Up")
                                 .foregroundColor(.white)
                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                            .padding(.all, 20)
+                            .padding(.all, 16)
                             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                             .background(.orange.opacity(0.9))
                             .clipShape(.rect(cornerRadius: 14))
@@ -123,10 +125,16 @@ struct SignUpPage: View {
                                 .foregroundColor(.white)
                                 .font(.system(size: 18))
                             .fontWeight(.bold)
-                            Text("Sign In")
-                                .foregroundColor(.orange)
-                                .font(.system(size: 18))
-                            .fontWeight(.bold)
+                            
+                            Button(action: {
+                                route.navigate(to: .loginPage)
+                            }, label: {
+                                Text("Sign In")
+                                    .foregroundColor(.orange)
+                                    .font(.system(size: 18))
+                                .fontWeight(.bold)
+                            })
+                         
                         }
                         .padding(.vertical,12)
                     }
@@ -138,4 +146,5 @@ struct SignUpPage: View {
 
 #Preview {
     SignUpPage()
+        .environmentObject(Route())
 }

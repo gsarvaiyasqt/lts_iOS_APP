@@ -1,5 +1,5 @@
 //
-//  channel_model.swift
+//  channelModel.swift
 //  ListenToSeniorApp
 //
 //  Created by MAC0013 on 29/10/24.

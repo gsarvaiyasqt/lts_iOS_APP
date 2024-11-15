@@ -8,11 +8,35 @@
 import SwiftUI
 
 struct LeandingPage: View {
+    
+    @EnvironmentObject var router: Route
+    @EnvironmentObject var leandingModel : LeandingModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Color.black.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            
+            VStack{
+                Image("ltslogo")
+                    .padding(.vertical,20)
+                
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .tint(.white)
+                    .onAppear {
+                        print("\(TokenManager.shared.hasToken()) ====  token value?")
+                        print("\(leandingModel.isLogin) \(leandingModel.isGuest) ====  check this model.isLogin")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            router.navigate(to: leandingModel.isLogin ? .mainTabPage : .loginPage)
+                        }
+                    }
+            }
+        }
     }
 }
 
 #Preview {
     LeandingPage()
+        .environmentObject(Route())
+        .environmentObject(LeandingModel())
 }

@@ -7,12 +7,7 @@
 
 import SwiftUI
 
-struct LeandingModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    LeandingModel()
+class LeandingModel: ObservableObject{
+    @Published var isLogin: Bool = false
+    @Published var isGuest: Bool = false
 }

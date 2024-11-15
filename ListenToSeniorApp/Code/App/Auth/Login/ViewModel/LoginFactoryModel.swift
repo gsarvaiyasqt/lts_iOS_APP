@@ -6,3 +6,9 @@
 //
 
 import Foundation
+final class LoginViewModelFactory {
+    @MainActor
+    static func createTaskViewModel() -> LoginViewModel {
+        return LoginViewModel(loginRepository: LoginRepoImpl())
+    }
+}

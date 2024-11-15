@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+
+struct ApiConfig {
+    
+    static let baseUrl = "https://qaapi.listentoseniors.com/api/"
+    
+    static func loginEndpoint() -> String {
+        return baseUrl + "user/login"
+    }
+    
+}

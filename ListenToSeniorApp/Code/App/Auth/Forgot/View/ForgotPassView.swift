@@ -32,9 +32,6 @@ struct ForgotPassView: View {
                     .fontWeight(.medium)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 40)
-                
-                
-     
                                         
                     CustomTextField(
                         txtController: $email,
@@ -54,7 +51,7 @@ struct ForgotPassView: View {
                     Text("Forgot")
                         .foregroundColor(.white)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .padding(.all, 20)
+                    .padding(.all, 16)
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                     .background(.orange.opacity(0.9))
                     .clipShape(.rect(cornerRadius: 14))

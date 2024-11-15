@@ -10,7 +10,7 @@ import Foundation
 
 struct LoginReqModel : Codable {
     
-    let userName : String
+    let username : String
     let password : String
     
 }
